@@ -7,11 +7,11 @@ class IrisData:
 		X = iris.data
 		y = iris.target
 		z = iris.target_names
-		f = iris.feature_names		
-		print(X.shape)
-		print(y.shape)
+		f = iris.feature_names
+		print(X)
+		print(y)
 		print(f)
-		print(z[1])
+					
 
 if __name__ == "__main__":
 	obj = IrisData()

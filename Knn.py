@@ -24,10 +24,10 @@ class Knn:
 		data = []
 		while (count >0 and count <2):
 			for i in range(4):
-				data.append(int(input("Enter feature :")))
+				data.append(float(input("Enter feature :")))
 			testData = np.array(data)
 			res = clf.predict(testData)
-			print("Knn Prediction is that it is a : ",tgtNms[res[0]])
+			print("Knn Predict that it is a : ",tgtNms[res[0]])
 			data.clear()
 			count = int(input("Enter 1 If you have Test Case "))
 
