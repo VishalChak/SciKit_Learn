@@ -9,8 +9,8 @@ class IrisData:
 		z = iris.target_names
 		f = iris.feature_names
 		print(X)
-		print(y)
-		print(f)
+		#print(y)
+		#print(f)
 					
 
 if __name__ == "__main__":
