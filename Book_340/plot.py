@@ -1,5 +1,6 @@
-import matplotlib
+
 import numpy as np
+import matplotlib
 matplotlib.matplotlib_fname()
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
