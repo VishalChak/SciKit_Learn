@@ -3,13 +3,10 @@ import matplotlib
 matplotlib.matplotlib_fname()
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
-
 import numpy as np
 
 X, y = mglearn.datasets.make_forge()
 plt.scatter(X[:, 0], X[:, 1], c=y, s=60, cmap=mglearn.cm2)
-#plt.show()
-print("X.shape: %s" % (X.shape,))
 
 X, y = mglearn.datasets.make_wave(n_samples=40)
 plt.plot(X, y, 'o')
@@ -35,16 +32,13 @@ print(boston.keys())
 print(boston.feature_names)
 print(boston.target)
 
-
 X, y = mglearn.datasets.load_extended_boston()
 print(X.shape)
-
 
 #mglearn.plots.plot_knn_classification(n_neighbors=1)
 mglearn.plots.plot_knn_classification(n_neighbors=3)
 plt.title("forge_one_neighbor");
 plt.show()
-
 
 for n_neighbors, ax in zip([1, 3, 9], axes):
 # make predictions using 1, 3 or 9 neighbors
