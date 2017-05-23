@@ -28,6 +28,8 @@ class TrainTestSplit:
 		print("Metrics Accuracy for logreg is : ",accu)
 		
 		
+		
+		
 	
 	#KNN k = n
 	def knn(self,X,y,k):
