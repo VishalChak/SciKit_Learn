@@ -5,6 +5,8 @@ from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 
 
+from sklearn.svm import SVC
+
 cancer = load_breast_cancer()
 X = cancer.data
 y = cancer.target 
@@ -35,3 +37,35 @@ X_test_scaled = scaler.transform(X_test)
 # print test data properties after scaling
 print("per-feature minimum after scaling: %s" % X_test_scaled.min(axis=0))
 print("per-feature maximum after scaling: %s" % X_test_scaled.max(axis=0))
+
+svm = SVC(C=100)
+svm.fit(X_train,y_train)
+print(svm.score(X_test,y_test))
+
+
+scaler = MinMaxScaler()
+scaler.fit(X_train)
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+# learning an SVM on the scaled training data
+
+
+svm.fit(X_train_scaled, y_train)
+# scoring on the scaled test set
+svm.score(X_test_scaled, y_test)
+
+print(svm.score(X_test_scaled, y_test))
+
+
+# preprocessing using zero mean and unit variance scaling
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+# learning an SVM on the scaled training data
+svm.fit(X_train_scaled, y_train)
+# scoring on the scaled test set
+svm.score(X_test_scaled, y_test)
+
+print(svm.score(X_test_scaled, y_test))
